@@ -1,19 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import Homepage from "./components/pages/homepage";
 
 function App() {
 
-return(
-  <>
+  return (
+    <>
       <NextThemesProvider attribute="class" defaultTheme="dark">
-
-    <h3 className='text-red-600'>Hello</h3>
-    {/* <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div> */}
-    </NextThemesProvider>
-  </>
-)
+        <Homepage />
+      </NextThemesProvider>
+    </>
+  )
 }
 
 export default App
