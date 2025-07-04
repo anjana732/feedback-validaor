@@ -1,10 +1,17 @@
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import FeedbackAnimation from "@/assets/lottie/feedbackAnimation.json";
+import Lottie from "lottie-react";
 
 
 export default function FeedbackForm() {
   return (
+    <div>
+      <div>
+         <Lottie animationData={FeedbackAnimation} loop={true} />
+      </div>
+
     <form className="max-w-xl mx-auto space-y-6 bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-lg mt-15">
       <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 text-center">Share your Feedback</h2>
 
@@ -27,5 +34,6 @@ export default function FeedbackForm() {
         Submit Feedback
       </Button>
     </form>
+    </div>
   )
 }
