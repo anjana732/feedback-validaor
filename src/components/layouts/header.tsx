@@ -10,5 +10,6 @@ export default function Header({onAction }: { onAction: () => void }){
         Get Insight
       </Button>
     </div>
+    
   );
 }
