@@ -8,9 +8,10 @@ export default function Homepage(){
 
     return(
         <>
-            <NewsPopup/>
+            
             <Header onAction={()=>setGetNewsButtonClick(true)}/>
             <FeedbackForm/>
+            {getNewsButtonClick && <NewsPopup/>}
         </>
     )
 }
