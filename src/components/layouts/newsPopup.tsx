@@ -19,9 +19,9 @@ export default function NewsPopup({text} : { text: string }) {
     async function fetchData() {
       try {
         const response = await fetch(apiUrl);
-        // if (!response.ok) {
-        //   throw new Error("Network response was not ok");
-        // }
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         const res = await response.json();
         setData(res);
         console.log("Data received:", res);
@@ -32,7 +32,7 @@ export default function NewsPopup({text} : { text: string }) {
 
     fetchData();
   }, [apiUrl]); 
-// 👈 empty deps = run only once on mount
+
   return (
     <Dialog>
       <DialogTrigger asChild>
