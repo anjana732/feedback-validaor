@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState, useEffect } from "react";
 
-export default function NewsPopup() {
+export default function NewsPopup({text} : { text: string }) {
   const [data, setData] = useState("");
 
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -33,7 +33,7 @@ export default function NewsPopup() {
 
   return (
     <Dialog>
-      <DialogTrigger>Open</DialogTrigger>
+      <DialogTrigger>{text}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Are you absolutely sure?</DialogTitle>

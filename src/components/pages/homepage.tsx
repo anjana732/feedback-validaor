@@ -9,9 +9,9 @@ export default function Homepage(){
     return(
         <>
             
-            <Header onAction={()=>setGetNewsButtonClick(true)}/>
+            <Header/>
             <FeedbackForm/>
-            {getNewsButtonClick && <NewsPopup/>}
+            {/* {getNewsButtonClick && <NewsPopup/>} */}
         </>
     )
 }
