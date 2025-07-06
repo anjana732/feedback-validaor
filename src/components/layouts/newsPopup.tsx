@@ -6,6 +6,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Button } from "../ui/button";
+
 import { useState, useEffect } from "react";
 
 export default function NewsPopup({text} : { text: string }) {
@@ -17,9 +19,9 @@ export default function NewsPopup({text} : { text: string }) {
     async function fetchData() {
       try {
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+        // if (!response.ok) {
+        //   throw new Error("Network response was not ok");
+        // }
         const res = await response.json();
         setData(res);
         console.log("Data received:", res);
@@ -29,15 +31,19 @@ export default function NewsPopup({text} : { text: string }) {
     }
 
     fetchData();
-  }, [apiUrl]); // 👈 empty deps = run only once on mount
-
+  }, [apiUrl]); 
+// 👈 empty deps = run only once on mount
   return (
     <Dialog>
-      <DialogTrigger>{text}</DialogTrigger>
+      <DialogTrigger asChild>
+        <Button className="bg-white text-black border border-gray-300 hover:bg-gray-100 shadow-sm">
+          {text}
+        </Button>
+      </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Are you absolutely sure?</DialogTitle>
-          <DialogDescription>
+          <DialogTitle>Please read the news below</DialogTitle>
+          <DialogDescription className="whitespace-pre-wrap">
             {typeof data === "string" ? data : JSON.stringify(data, null, 2)}
           </DialogDescription>
         </DialogHeader>
