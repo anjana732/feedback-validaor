@@ -6,12 +6,17 @@ import Lottie from "lottie-react";
 import { TourProvider, useTour } from "@reactour/tour";
 import { useEffect } from "react";
 
+// ------------------ Content Component ------------------ //
 function FeedbackFormContent() {
   const { setIsOpen, setCurrentStep } = useTour();
 
   useEffect(() => {
-    setCurrentStep(0);
-    setIsOpen(true); // ✅ Starts the tour on mount
+    const timeout = setTimeout(() => {
+      setCurrentStep(0);
+      setIsOpen(true); 
+    }, 300); 
+
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
@@ -61,6 +66,7 @@ function FeedbackFormContent() {
   );
 }
 
+// ------------------ Main Tour Wrapper ------------------ //
 export default function FeedbackForm() {
   const steps = [
     {
@@ -82,7 +88,23 @@ export default function FeedbackForm() {
   ];
 
   return (
-    <TourProvider steps={steps} showNavigation showBadge>
+    <TourProvider
+      steps={steps}
+      showNavigation
+      showBadge
+      styles={{
+    popover: (base) => ({
+      ...base,
+      zIndex: 9999,
+      color: "black",           
+      backgroundColor: "white",  
+    }),
+    maskWrapper: (base) => ({
+      ...base,
+      zIndex: 9998,
+    }),
+  }}
+    >
       <FeedbackFormContent />
     </TourProvider>
   );
