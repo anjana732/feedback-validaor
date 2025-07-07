@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 
 export default function NewsPopup({text} : { text: string }) {
   const [data, setData] = useState("");
+  const [urlToImage, seturlToImage] = useState("");
 
   const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -24,9 +25,10 @@ export default function NewsPopup({text} : { text: string }) {
         }
         const res = await response.json();
         // setData(res);
-        console.log("data......",data)
-        console.log("Data received:", res.articles[0].content);
-        setData(res.articles[0].content)
+        console.log(res);
+        console.log("Data received:", res.articles[0].description);
+        setData(res.articles[0].description)
+        seturlToImage(res.articles[0].urlToImage);
       } catch (error) {
         console.error("Fetch error:", error);
       }
@@ -46,7 +48,10 @@ export default function NewsPopup({text} : { text: string }) {
         <DialogHeader>
           <DialogTitle>Please read the news below</DialogTitle>
           <DialogDescription className="whitespace-pre-wrap">
-            {typeof data === "string" ? data : JSON.stringify(data, null, 2)}
+            <img src= {urlToImage} alt="image"/>
+           
+            {/* {typeof data === "string" ? data : JSON.stringify(data, null, 2)} */}
+            {data}
           </DialogDescription>
         </DialogHeader>
       </DialogContent>
