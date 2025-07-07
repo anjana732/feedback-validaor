@@ -23,8 +23,10 @@ export default function NewsPopup({text} : { text: string }) {
           throw new Error("Network response was not ok");
         }
         const res = await response.json();
-        setData(res);
-        console.log("Data received:", res);
+        // setData(res);
+        console.log("data......",data)
+        console.log("Data received:", res.articles[0].content);
+        setData(res.articles[0].content)
       } catch (error) {
         console.error("Fetch error:", error);
       }
