@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import NewsPopup from "./newsPopup";
+import NewsPopup from "./NewsPopup";
 
 export default function Header(){
      return (

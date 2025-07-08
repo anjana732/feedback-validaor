@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import FeedbackAnimation from "@/assets/lottie/feedbackAnimation.json";
 import Lottie from "lottie-react";
 import { TourProvider, useTour } from "@reactour/tour";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // ------------------ Content Component ------------------ //
 function FeedbackFormContent() {
   const { setIsOpen, setCurrentStep } = useTour();
+  const [message, setMessage] = useState("");
   const formRef = useRef(null);
 
   useEffect(() => {
