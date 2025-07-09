@@ -30,6 +30,7 @@ A professional and interactive React application that collects user feedback, an
 | **React Router DOM**  | Routing between form and result      |
 | **Framer Motion**     | Smooth animation for slider/emoji    |
 | **Tailwind CSS**      | Utility-first modern styling         |
+| **Shadcn UI**         | Modern styling                       |
 | **@reactour/tour**    | User onboarding form tour            |
 | **Sentiment**         | Natural language sentiment scoring   |
 | **Lottie React**      | Feedback form animation              |
@@ -73,3 +74,54 @@ This is visualized on a slider with color-coded feedback:
 ```bash
 git clone https://github.com/your-username/feedback-validator.git
 cd feedback-validator
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+App will be available at: http://localhost:5173
+
+## 🔍 Folder Details
+
+| Folder/File                  | Description                                         |
+|-----------------------------|-----------------------------------------------------|
+| `FeedbackForm.tsx`          | Handles feedback input, validation & submission     |
+| `SentimentAnalyser.tsx`     | Consumes message, runs sentiment, shows results     |
+| `SentimentAnalyserSlider.tsx` | Animated slider UI with emoji label               |
+| `sentimentAnalyser.ts`      | Exports `analyzeText(text: string)` function        |
+| `App.tsx`                   | Wraps routes and theme provider                     |
+
+---
+
+## 🧩 Future Improvements
+
+- 🧠 Use a more advanced NLP model (like OpenAI or VADER)
+- 📤 Save feedback to a database
+- 📊 Dashboard for tracking sentiment over time
+- 🔒 Authentication for feedback submission
+- 📱 Mobile-first enhancements
+
+---
+
+## 🧑‍💻 Author
+
+Made with ❤️ by **Anjana Kumari**  
+📧 anjanasingh1257@gmail.com  
+🔗 [LinkedIn](#) • [GitHub](#)
+
+---
+
+## 📄 License
+
+**MIT License**  
+Free for personal and commercial use.
