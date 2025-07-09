@@ -28,12 +28,20 @@ function FeedbackFormContent() {
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData.entries());
     console.log(data);
+    const value = formData.get("Message");
+    if(typeof(value) === "string"){
+      setMessage(value);
+      console.log("message", message);
+    }else{
+      console.log("Not String");
+    }
   }
 
   return (
     <div className="w-full px-6 lg:px-16 py-12">
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
         {/* Feedback Form */}
+        
         <div className="w-full lg:max-w-xl">
           <form className="space-y-6 bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-xl h-full" ref={formRef} onSubmit={handleSubmit}>
             <h2 className="text-3xl font-semibold text-zinc-900 dark:text-zinc-100 text-center">
@@ -74,6 +82,8 @@ function FeedbackFormContent() {
         </div>
       </div>
     </div>
+
+    
   );
 }
 
