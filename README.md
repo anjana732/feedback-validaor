@@ -16,9 +16,9 @@ A professional and interactive React application that collects user feedback, an
 
 ---
 
-## 📂 Project Structure
+## 📂 Deployement Link
 
-
+coming soon ....
 ---
 
 ## 🧪 Technologies Used
@@ -55,15 +55,6 @@ This is visualized on a slider with color-coded feedback:
 |  0            | 😐      | Yellow         |
 |  1 to 3       | 🙂      | Lime           |
 |  4 to 5       | 😄      | Green          |
-
----
-
-## 📸 Screenshots
-
-> Add screenshots here of:
-> - Feedback Form UI
-> - Slider animation
-> - Result with score breakdown
 
 ---
 
