@@ -18,7 +18,8 @@ A professional and interactive React application that collects user feedback, an
 
 ## 📂 Deployement Link
 
-coming soon ....
+Check out the deployed app here:  
+🔗 [Feedback Validator Live App](https://feedback-validaor-git-main-anjanas-projects-d256240a.vercel.app/)
 ---
 
 ## 🧪 Technologies Used
