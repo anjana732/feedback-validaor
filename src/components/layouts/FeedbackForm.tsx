@@ -5,12 +5,15 @@ import FeedbackAnimation from "@/assets/lottie/feedbackAnimation.json";
 import Lottie from "lottie-react";
 import { TourProvider, useTour } from "@reactour/tour";
 import { useEffect, useRef, useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 // ------------------ Content Component ------------------ //
 function FeedbackFormContent() {
   const { setIsOpen, setCurrentStep } = useTour();
   const [message, setMessage] = useState("");
   const formRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -35,6 +38,7 @@ function FeedbackFormContent() {
     }else{
       console.log("Not String");
     }
+    navigate('/feedback')
   }
 
   return (
