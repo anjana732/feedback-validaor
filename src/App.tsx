@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/feedback" element={<SentimentAnalyser data="I am good" />} />
+          <Route path="/feedback" element={<SentimentAnalyser />} />
         </Routes>
       </Router>
     </NextThemesProvider>
